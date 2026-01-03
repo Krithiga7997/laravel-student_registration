@@ -11,7 +11,7 @@ class StudentController extends Controller
         return view('students.create');
     }
 
-    public function studentRecord(Request $request) {
+    public function store(Request $request) {
         $request->validate([
             'student_name' => 'required|string',
             'registration_no' => 'required|unique:students',
