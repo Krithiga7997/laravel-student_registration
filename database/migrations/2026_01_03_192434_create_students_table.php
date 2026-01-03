@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('registration_no')->unique;
             $table->string('email')->unique;
             $table->string('department');
-            $table->string('semester');
-            $table->string('status');
+            $table->integer('semester');
+            $table->enum('status', ['Pending', 'Verified'])->default('Pending');
             $table->timestamps();
         });
     }
